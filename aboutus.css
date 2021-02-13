@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
+
+body {
+  background-color: #f8e7e6;
+  font-family: "Google Sans", cursive;
+}
+
+/* ---------------TEAM MEMBER PART --------------*/
+img {
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.col {
+  /* background-color: palevioletred; */
+  border-radius: 20px;
+}
+
+.name {
+  text-align: center;
+}
+.body {
+  /* background-color: beige; */
+  margin-block-start: 20px;
+  margin-inline-end: 20px;
+}
+.text {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------------CONTACT US PART --------------*/
+.contact1 {
+  width: 100%;
+  min-height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-contact1 {
+  width: 550px;
+  background: #cae4e9;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.contact1-form {
+  width: 390px; /*form's length*/
+}
+
+.contact1-form-title {
+  display: block;
+  /* font-family: Monaco; */
+  font-size: 24px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+/*---------------------------------------------*/
+
+input.input1 {
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px;
+}
+
+textarea.input1 {
+  min-height: 150px;
+  border-radius: 25px;
+  padding: 12px 30px;
+}
+
+.wrap-input1 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.input1 {
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666; /* */
+}
+
+input {
+  outline: none;
+  border: none;
+}
+textarea {
+  outline: none;
+  border: none;
+}
+
+/*---------------BUTTON---------------*/
+.container-contact1-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact1-form-btn {
+  width: 193px;
+  height: 50px;
+  border-radius: 25px;
+  background: #e9b1db;
+  font-size: 20px;
+  /* line-height: 1.5; */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  outline: none;
+  border: none;
+}
+
+.contact1-form-btn:hover {
+  background: #333333;
+}
