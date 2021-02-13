@@ -4,6 +4,8 @@ body {
   background-color: #f8e7e6;
   font-family: "Google Sans", cursive;
 }
+
+/* ---------------TEAM MEMBER PART --------------*/
 img {
   justify-content: space-around;
   margin-top: 20px;
@@ -11,7 +13,6 @@ img {
 
 .col {
   /* background-color: palevioletred; */
-
   border-radius: 20px;
 }
 
