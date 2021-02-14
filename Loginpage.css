@@ -41,3 +41,7 @@ img {
   background-color: white;
   border: 1px solid black;
 }
+
+.form-control {
+  border-radius: 25px;
+}
