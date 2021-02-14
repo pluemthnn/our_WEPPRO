@@ -46,7 +46,7 @@ a {
 .container-contact1 {
   width: 550px;
   background: #cae4e9;
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -94,7 +94,7 @@ textarea.input1 {
 .input1 {
   display: block;
   width: 100%;
-  background: #e6e6e6;
+  /* background: #e6e6e6; */
   font-size: 15px;
   line-height: 1.5;
   color: #666666; /* */
