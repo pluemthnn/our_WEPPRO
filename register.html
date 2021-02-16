@@ -2,107 +2,75 @@
 <html lang="en">
   <head>
     <title>Register</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
-      * {
-        text-align: center;
-        font-family: "Google Sans", cursive;
-      }
-      .container {
-        background-color: pink;
-        border-radius: 30px;
-      }
-      h2 {
-        padding-top: 20px;
-      }
-      .container-btn {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        /* padding-top: 20px;
-        padding-bottom: 20px; */
-        padding: 20px 20px;
-      }
-      .btn {
-        width: 150px;
-        height: 50px;
-        border-radius: 25px;
-        background: #e9b1db;
-        outline: none;
-        border: none;
-        font-size: 20px;
-      }
-      .input1 {
-        outline: none;
-        border: none;
-      }
-    </style>
+    <link rel="stylesheet" href="register.css" />
   </head>
   <body>
     <div class="container">
-      <h2>Register</h2>
-      <label for="username">username</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtusername"
-        required
-        placeholder="Username"
-      /><br />
-      <label for="password">password</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtpwd"
-        required
-        placeholder="Password"
-      /><br />
-      <label for="repassword">re-password</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtpwd"
-        required
-        placeholder="Re-Password"
-      /><br />
-      <label for="email">Email</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtemail"
-        required
-        placeholder="E-mail"
-      /><br />
-      <label for="firstname">First name</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtfname"
-        required
-        placeholder="First name"
-      /><br />
-      <label for="lastname">Last name</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtlname"
-        required
-        placeholder="Last name"
-      /><br />
-      <label for="cldBD">Birthdate</label>
-      <input type="date" class="input1" id="cldBD" required /><br />
-      <label for="phone">phone number</label>
-      <input
-        type="text"
-        class="input1"
-        id="txtphone"
-        required
-        placeholder="Phone"
-      /><br />
+      <div class="container-regis">
+        <h2>Register</h2>
+        <label for="username">username</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtusername"
+          required
+          placeholder="Username"
+        /><br />
+        <label for="password">password</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtpwd"
+          required
+          placeholder="Password"
+        /><br />
+        <label for="repassword">re-password</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtpwd"
+          required
+          placeholder="Re-Password"
+        /><br />
+        <label for="email">Email</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtemail"
+          required
+          placeholder="E-mail"
+        /><br />
+        <label for="firstname">First name</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtfname"
+          required
+          placeholder="First name"
+        /><br />
+        <label for="lastname">Last name</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtlname"
+          required
+          placeholder="Last name"
+        /><br />
+        <label for="cldBD">Birthdate</label>
+        <input type="date" class="input1" id="cldBD" required /><br />
+        <label for="phone">phone number</label>
+        <input
+          type="text"
+          class="input1"
+          id="txtphone"
+          required
+          placeholder="Phone"
+        /><br />
 
-      <div class="container-btn">
-        <button class="btn" type="submit">Register</button>
-        <button class="btn" type="reset">Clear</button>
+        <div class="container-btn">
+          <button class="btn" type="submit">Register</button>
+          <button class="btn" type="reset">Clear</button>
+        </div>
       </div>
     </div>
   </body>
