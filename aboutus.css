@@ -44,6 +44,7 @@ a {
 }
 
 .container-contact1 {
+  /*box of contact us*/
   width: 550px;
   background: #cae4e9;
   border-radius: 30px;
@@ -58,12 +59,12 @@ a {
 }
 
 .contact1-form {
-  width: 390px; /*form's length*/
+  width: 390px; /*input box form's length*/
 }
 
 .contact1-form-title {
+  /*Title: Contact Us*/
   display: block;
-  /* font-family: Monaco; */
   font-size: 24px;
   color: #333333;
   line-height: 1.2;
@@ -72,7 +73,6 @@ a {
 }
 
 /*---------------------------------------------*/
-
 input.input1 {
   height: 50px;
   border-radius: 25px;
@@ -86,6 +86,7 @@ textarea.input1 {
 }
 
 .wrap-input1 {
+  /*a space between input box*/
   position: relative;
   width: 100%;
   z-index: 1;
@@ -95,10 +96,9 @@ textarea.input1 {
 .input1 {
   display: block;
   width: 100%;
-  /* background: #e6e6e6; */
   font-size: 15px;
   line-height: 1.5;
-  color: #666666; /* */
+  /* color: #666666;  */
 }
 
 input {
