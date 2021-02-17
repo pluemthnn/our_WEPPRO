@@ -6,6 +6,10 @@ body {
 }
 
 /* ---------------TEAM MEMBER PART --------------*/
+
+h1 {
+  padding-top: 40px;
+}
 img {
   justify-content: space-around;
   margin-top: 20px;
@@ -26,10 +30,6 @@ img {
 }
 .text {
   text-align: center;
-}
-
-a {
-  text-decoration: none;
 }
 
 /* ---------------CONTACT US PART --------------*/
