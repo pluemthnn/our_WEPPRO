@@ -43,6 +43,10 @@
       right: 0;
       padding-bottom: 50px;
     }
+    article{
+      text-align: center;
+      padding: 30px;
+    }
     
   </style>
     </head>
@@ -74,7 +78,7 @@
             </li>
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /> -->
             <button class="btn btn-outline-light me-2" type="submit">
               Search
             </button>
@@ -94,36 +98,50 @@
   </div>
     
         <!-- Carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="2"></button>
-            </ol>
+         <div id="Carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#Carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+              <button type="button" data-bs-target="#Carousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+              <button type="button" data-bs-target="#Carousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+            </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" style="background-image:url(./image/bg02.jpg); background-size: cover;">
                     <div class="container">
-                        <h1>Example</h1>
-                        <p>eiei</p>
-                        <a href="#" class="btn btn-lg btn-primary">More...</a>
+                        <div class="carousel-caption">
+                            <h2>Example headline.</h2>
+                            <p>Some representative placeholder content for the first slide of the carousel.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" style="background-image:url(./image/bg03.jpg); background-size: cover;">
                     <div class="container">
-                        <h1>Example</h1>
-                        <p>eiei</p>
-                        <a href="#" class="btn btn-lg btn-primary">More...</a>
+                        <div class="carousel-caption">
+                            <h2>Another example headline.</h2>
+                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" style="background-image:url(./image/bg07.jpg); background-size: cover;">
                     <div class="container">
-                        <h1>Example</h1>
-                        <p>eiei</p>
-                        <a href="#" class="btn btn-lg btn-primary">More...</a>
+                        <div class="carousel-caption">
+                            <h2>One more for good measure.</h2>
+                            <p>Some representative placeholder content for the third slide of this carousel.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#Carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#Carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+        <article>
+            <h2>Upcoming Event</h2>
+        </article>
 
         
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
