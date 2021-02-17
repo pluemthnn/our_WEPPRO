@@ -53,8 +53,7 @@ input.input1 {
 }
 
 button.btn {
-  padding-left: 10px;
-  padding-right: 10px;
+  margin: 20px 10px 50px 70px;
 }
 
 input {
