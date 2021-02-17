@@ -13,8 +13,9 @@ body {
 
 #box {
   background-color: rgb(255, 226, 230);
+  box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
-  width: 85vh;
+  width: 90vh;
   height: 100%;
 }
 
@@ -35,7 +36,7 @@ input.input1 {
 .input1 {
   outline: none;
   border: none;
-  width: 40%;
+  width: 50%;
   height: 50px;
   border-radius: 25px;
   padding: 0 30px;
@@ -53,7 +54,11 @@ input.input1 {
 }
 
 button.btn {
-  margin: 20px 10px 50px 70px;
+  margin: 10px 30px 10px 10px;
+}
+
+button.btn :hover {
+  background-color: rgb(255, 226, 230);
 }
 
 input {
