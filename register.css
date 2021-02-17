@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
 * {
-  text-align: center;
   font-family: "Google Sans", cursive;
 }
 .container {
   background-color: pink;
   border-radius: 30px;
+}
+
+.container-regis {
+  padding-left: 32%;
 }
 
 h2 {
@@ -25,10 +28,10 @@ input.input1 {
 .input1 {
   outline: none;
   border: none;
-  width: 40%;
-  height: 50px;
+  width: 35%;
+  height: 40px;
   border-radius: 25px;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 /*---------------BUTTON---------------*/
