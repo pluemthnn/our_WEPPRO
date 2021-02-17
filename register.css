@@ -3,9 +3,19 @@
   text-align: center;
   font-family: "Google Sans", cursive;
 }
-.container {
-  background-color: pink;
+
+body {
+  background: #cae4e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#box {
+  background-color: rgb(255, 226, 230);
   border-radius: 30px;
+  width: 85vh;
+  height: 100%;
 }
 
 h2 {
@@ -43,6 +53,7 @@ input.input1 {
 }
 
 button.btn {
+  border-right: 100px;
 }
 
 input {
