@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,17 +7,18 @@
   </head>
   <body>
     <div class="container">
-      <h2 style="text-align: center">Register</h2>
-      <div class="container-regis">
-        <label for="username">Username</label>
+      <form class="container-form validate-form" id="box">
+        <h2>Register</h2>
+          <!-- <label for="username" >Username</label> -->
         <input
           type="text"
           class="input1"
           id="txtusername"
           required
           placeholder="Username"
-        /><br />
-        <label for="password">Password</label>
+        />
+        <br />
+        <!-- <label for="password">Password</label> -->
         <input
           type="text"
           class="input1"
@@ -24,7 +26,7 @@
           required
           placeholder="Password"
         /><br />
-        <label for="repassword">Re-password</label>
+        <!-- <label for="repassword">Re-password</label> -->
         <input
           type="text"
           class="input1"
@@ -32,7 +34,7 @@
           required
           placeholder="Re-Password"
         /><br />
-        <label for="email">Email</label>
+        <!-- <label for="email">Email</label> -->
         <input
           type="text"
           class="input1"
@@ -40,7 +42,7 @@
           required
           placeholder="E-mail"
         /><br />
-        <label for="firstname">First name</label>
+        <!-- <label for="firstname">First name</label> -->
         <input
           type="text"
           class="input1"
@@ -48,7 +50,7 @@
           required
           placeholder="First name"
         /><br />
-        <label for="lastname">Last name</label>
+        <!-- <label for="lastname">Last name</label> -->
         <input
           type="text"
           class="input1"
@@ -56,9 +58,9 @@
           required
           placeholder="Last name"
         /><br />
-        <label for="cldBD">Birthdate</label>
+        <!-- <label for="cldBD">Birthdate</label> -->
         <input type="date" class="input1" id="cldBD" required /><br />
-        <label for="phone">phone number</label>
+        <!-- <label for="phone">phone number</label> -->
         <input
           type="text"
           class="input1"
@@ -66,11 +68,12 @@
           required
           placeholder="Phone"
         /><br />
-      </div>
-      <div class="container-btn" style="text-align: center;">
-        <button class="btn" type="submit">Register</button>
-        <button class="btn" type="reset">Clear</button>
-      </div>
+
+        <div class="container-btn">
+          <button class="btn" type="submit">Register</button>
+          <button class="btn" type="reset">Clear</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>
