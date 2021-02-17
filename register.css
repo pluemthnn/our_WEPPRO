@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
+* {
+  text-align: center;
+  font-family: "Google Sans", cursive;
+}
+.container {
+  background-color: pink;
+  border-radius: 30px;
+}
+
+h2 {
+  padding-top: 20px;
+}
+.container-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
+  padding: 20px 20px;
+}
+input.input1 {
+  text-align: left;
+}
+.input1 {
+  outline: none;
+  border: none;
+  width: 40%;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px;
+}
+
+/*---------------BUTTON---------------*/
+.btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  background: #e9b1db;
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+
+button.btn {
+}
+
+input {
+  margin-bottom: 20px; /* space between input box */
+}
