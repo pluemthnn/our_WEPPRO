@@ -6,16 +6,19 @@
   </head>
   <body>
     <div class="container">
-      <div class="container-regis" id="box">
+      <form class="container-form validate-form" id="box">
         <h2>Register</h2>
-        <label for="username">Username</label>
+        <div class="box">
+          <label for="username" >Username</label>
         <input
           type="text"
           class="input1"
           id="txtusername"
           required
           placeholder="Username"
-        /><br />
+        />
+        </div>
+        <br />
         <label for="password">Password</label>
         <input
           type="text"
@@ -71,7 +74,7 @@
           <button class="btn" type="submit">Register</button>
           <button class="btn" type="reset">Clear</button>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>
