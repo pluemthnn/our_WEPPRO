@@ -6,9 +6,9 @@
 
 body {
   background: #cae4e9;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 #box {
@@ -17,6 +17,7 @@ body {
   border-radius: 30px;
   width: 90vh;
   height: 100%;
+  margin: 20px 0px;
 }
 
 h2 {
