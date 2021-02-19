@@ -1,35 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-        crossorigin="anonymous"
-        />
 
-        <title> Search </title>
-        <link rel="stylesheet" href="ss.css" />
-        <script src="https://kit.fontawesome.com/114906923e.js" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
 
-    <header>
-        <!-- nav bar -->
-    </header>
-    <body>
-        <section class="Form my-4 mx-5">
-            <div class="container">
-                <div class="row no-gutters">
-                    <h1 class="font-weight-blod"> Search </h1>
-                        <form>
-                            <div class="form-box">
-                                 <input type="text" class="search-field-event" placeholder="Event">
-                                <input tpye="text" class="serach-field-location" placeholder="Location">
-                                 <button class="search-btn" type="button"> Search </button>
-                             </div>
-                        </form>
+    <title> Search </title>
+    <link rel="stylesheet" href="ss.css" />
+    <script src="https://kit.fontawesome.com/114906923e.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <!-- nav bar -->
+    <section id="app">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- Icono de NAVBAR -->
+                <nav class="navbar navbar-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="Homepage.html">
+                            <h6 class="font-weight-blod px-1 pt-1">Logo</h6>
+                            <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">         -->
+                        </a>
+                    </div>
+                </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="Homepage.html" class="nav-link" aria-current="page">All Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="aboutus.html" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="search.html" class="nav-link">Search</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="Loginpage.html" class="nav-link" aria-current="page">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="register.html" class="nav-link" aria-current="page">Register</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </body>
+        </nav>
+    </section>
+</header>
+
+<body>
+    <section class="Form my-4 mx-5">
+        <div class="container">
+            <div class="row no-gutters">
+                <!-- <h1 class="font-weight-blod"> Search </h1> -->
+                <form>
+                    <div class="form-box">
+                        <input type="text" class="search-field-event" placeholder="Event">
+                        <input type="text" class="serach-field-location" list="datalistOptions" placeholder="Location">
+                        <datalist id="datalistOptions">
+                            <option value="San Francisco">
+                            <option value="New York">
+                        </datalist>
+                        <button class="search-btn" type="button" onclick="go()">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <a id="lnk" href="result.html"></a>
+</body>
+<script>
+    function go() {
+        place = document.getElementsByTagName('option')
+        for (var i = 0; i < place.length; i++) {
+            console.log(place[i].value);
+        }
+        document.getElementById('lnk').click();
+    }
+</script>
+
 </html>

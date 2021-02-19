@@ -4,12 +4,23 @@
   box-sizing: border-box;
 }
 
+.app {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
 body {
   background: #cae4e9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 280px;
+  /* display: flex;
+  align-items: center; */
+  /* justify-content: center; */
+  /* padding-top: 280px; */
+}
+
+input {
+  margin-left: 10px;
 }
 
 .form-box {
@@ -18,8 +29,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background: #2f3640;
-  height: 40px;
-  width: 430px;
+  height: 60px;
+  width: 450px;
   border-radius: 40px;
   padding: 10px;
 }
@@ -40,7 +51,6 @@ body {
   outline: none;
   float: left;
   padding: 0;
-  color: white;
   font-size: 16px;
   transition: 0.5s;
 }
@@ -50,7 +60,6 @@ body {
   outline: none;
   float: left;
   padding: 0;
-  color: white;
   font-size: 16px;
   transition: 0.5s;
 }
@@ -58,4 +67,8 @@ body {
 .btn:hover {
   background-color: white;
   border: 1px solid black;
+}
+
+.search-btn {
+  margin-left: 10px;
 }
