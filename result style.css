@@ -1,3 +1,47 @@
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ten {
+  background: #cae4e9;
+  display: flex;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: white;
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+  background: #cae4e9;
+  margin: 0;
+  padding: 18%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-fluid {
+  width: 200px;
+  margin: 0;
+} */
+
 * {
   padding: 0;
   margin: 0;
@@ -9,12 +53,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 280px;
+  padding-top: 100px;
 }
 
 .form-box {
   position: absolute;
-  top: 400px;
+  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #2f3640;
@@ -58,4 +102,10 @@ body {
 .btn:hover {
   background-color: white;
   border: 1px solid black;
+}
+
+.img {
+  width: 30px;
+  height: 70px;
+  padding-top: 300px;
 }
