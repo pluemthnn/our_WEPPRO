@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+#app {
+  width: 100%;
+}
+
 body {
   background: #cae4e9;
   display: flex;
