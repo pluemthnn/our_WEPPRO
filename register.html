@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+
+<head>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Animate CSS -->
@@ -12,143 +13,102 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
-    <title>Register</title>
-    <link rel="stylesheet" href="register.css" />
-    <style>
-      .contenedor {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        position: fixed;
-        align-items: center;
-        justify-content: center;
-        color: #5e559c;
-      }
-  
-      .inicio {
-        background-color: antiquewhite;
-      }
-  
-      .portfolio {
-        background-color: antiquewhite;
-      }
-  
-      .contacto {
-        background-color: antiquewhite;
-      }
-      
-    </style>
-  </head>
-  <body>
-    <!-- Nav Bar -->
-    <div id="app">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <!-- Icono de NAVBAR -->
-          <nav class="navbar navbar-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="Homepage.html">
-                <h6 class="font-weight-blod px-1 pt-1">Logo</h6>
-                <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">         -->
-              </a>
-            </div>
-          </nav>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a href="Homepage.html" class="nav-link" aria-current="page">All Events</a>
-              </li>
-              <li class="nav-item">
-                <a href="aboutus.html" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="search.html" class="nav-link">Search</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav me-2 mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a href="Loginpage.html" class="nav-link" aria-current="page">Login</a>
-              </li>
-              <li class="nav-item">
-                <a href="register.html" class="nav-link" aria-current="page">Register</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <div class="container" style="display: flex; align-items: center; justify-content: center;">
-      <form class="container-form validate-form" id="box">
-        <h2>Register</h2>
-        <!-- <label for="username" >Username</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtusername"
-          required
-          placeholder="Username"
-        />
-        <br />
-        <!-- <label for="password">Password</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtpwd"
-          required
-          placeholder="Password"
-        /><br />
-        <!-- <label for="repassword">Re-password</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtpwd"
-          required
-          placeholder="Re-Password"
-        /><br />
-        <!-- <label for="email">Email</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtemail"
-          required
-          placeholder="E-mail"
-        /><br />
-        <!-- <label for="firstname">First name</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtfname"
-          required
-          placeholder="First name"
-        /><br />
-        <!-- <label for="lastname">Last name</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtlname"
-          required
-          placeholder="Last name"
-        /><br />
-        <!-- <label for="cldBD">Birthdate</label> -->
-        <input type="date" class="input1" id="cldBD" required /><br />
-        <!-- <label for="phone">phone number</label> -->
-        <input
-          type="text"
-          class="input1"
-          id="txtphone"
-          required
-          placeholder="Phone"
-        /><br />
+  <title>Register | Eventertainment</title>
+  <link rel="stylesheet" href="register.css" />
+  <style>
+    .contenedor {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      position: fixed;
+      align-items: center;
+      justify-content: center;
+      color: #5e559c;
+    }
 
-        <div class="container-btn">
-          <button class="btn" type="submit">Register</button>
-          <button class="btn" type="reset">Clear</button>
+    .inicio {
+      background-color: antiquewhite;
+    }
+
+    .portfolio {
+      background-color: antiquewhite;
+    }
+
+    .contacto {
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- Icono de NAVBAR -->
+        <nav class="navbar navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="Homepage.html">
+              <h6 class="font-weight-blod px-1 pt-1">Logo</h6>
+              <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">         -->
+            </a>
+          </div>
+        </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="Homepage.html" class="nav-link" aria-current="page">All Events</a>
+            </li>
+            <li class="nav-item">
+              <a href="aboutus.html" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="search.html" class="nav-link">Search</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="Loginpage.html" class="nav-link" aria-current="page">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="register.html" class="nav-link" aria-current="page">Register</a>
+            </li>
+          </ul>
         </div>
-      </form>
-    </div>
-  </body>
+      </div>
+    </nav>
+  </div>
+  <div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <form class="container-form validate-form" id="box">
+      <h2>Register</h2>
+      <!-- <label for="username" >Username</label> -->
+      <input type="text" class="input1" id="txtusername" required placeholder="Username" />
+      <br />
+      <!-- <label for="password">Password</label> -->
+      <input type="text" class="input1" id="txtpwd" required placeholder="Password" /><br />
+      <!-- <label for="repassword">Re-password</label> -->
+      <input type="text" class="input1" id="txtpwd" required placeholder="Re-Password" /><br />
+      <!-- <label for="email">Email</label> -->
+      <input type="text" class="input1" id="txtemail" required placeholder="E-mail" /><br />
+      <!-- <label for="firstname">First name</label> -->
+      <input type="text" class="input1" id="txtfname" required placeholder="First name" /><br />
+      <!-- <label for="lastname">Last name</label> -->
+      <input type="text" class="input1" id="txtlname" required placeholder="Last name" /><br />
+      <!-- <label for="cldBD">Birthdate</label> -->
+      <input type="date" class="input1" id="cldBD" required /><br />
+      <!-- <label for="phone">phone number</label> -->
+      <input type="text" class="input1" id="txtphone" required placeholder="Phone" /><br />
+
+      <div class="container-btn">
+        <button class="btn" type="submit">Register</button>
+        <button class="btn" type="reset">Clear</button>
+      </div>
+    </form>
+  </div>
+</body>
+
 </html>
