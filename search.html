@@ -8,18 +8,22 @@
     <title>Search | Eventertainment</title>
     <link rel="stylesheet" href="ss.css" />
     <script src="https://kit.fontawesome.com/114906923e.js" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<header>
+<body>
     <!-- nav bar -->
-    <section id="app">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
                 <!-- Icono de NAVBAR -->
-                <nav class="navbar navbar-dark">
+                <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="Homepage.html">
-                            <h6 class="font-weight-blod px-1 pt-1">Logo</h6>
+                            <h6 class="font-weight-blod px-1 pt-1"></h6>
+                            <i class="fas fa-fire-alt inline-block align-top" width="40" height="40"></i>
                             <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">         -->
                         </a>
                     </div>
@@ -32,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="Homepage.html" class="nav-link" aria-current="page">All Events</a>
+                            <a href="#" class="nav-link" aria-current="page">Events</a>
                         </li>
                         <li class="nav-item">
                             <a href="aboutus.html" class="nav-link">About Us</a>
@@ -52,29 +56,43 @@
                 </div>
             </div>
         </nav>
-    </section>
-</header>
-
-<body>
-    <section class="Form my-4 mx-5">
-        <div class="container">
-            <div class="row no-gutters">
-                <!-- <h1 class="font-weight-blod"> Search </h1> -->
-                <form>
-                    <div class="form-box">
-                        <input type="text" class="search-field-event" placeholder="Event">
-                        <input type="text" class="serach-field-location" list="datalistOptions" placeholder="Location">
-                        <datalist id="datalistOptions">
-                            <option value="San Francisco">
-                            <option value="New York">
-                        </datalist>
-                        <button class="search-btn" type="button" onclick="go()">Search</button>
-                    </div>
-                </form>
+    </div>
+    <div class="container pt-3">
+        <div class="row pt-1 pb-1">
+            <div class="col-lg-12">
+                <h4 class="text-center">Want to find the event?</h4>
+                <h6 class="text-center"></h6>
             </div>
         </div>
+    </div>
+    <section class="search-sec pt-3">
+        <div class="container">
+            <form action="#" method="" novalidate="novalidate">
+                <div class="row p-3" id="formrow">
+                    <div class="col-lg-6 py-1 col-md-3 col-sm-12 px-1">
+                        <input type="text" class="form-control search-slt" placeholder="Event name">
+                    </div>
+                    <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
+                        <input type="text" class="form-control search-slt" placeholder="Event Drop City">
+                    </div>
+                    <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
+                        <select class="form-control search-slt" id="exampleFormControlSelect1">
+                            <option>Select Location</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
+                        <button type="button" class="btn">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
-    <a id="lnk" href="result.html"></a>
 </body>
 <script>
     function go() {

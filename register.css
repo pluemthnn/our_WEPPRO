@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #cae4e9;
+  background: #ffffff;
   /* display: flex;
   align-items: center;
   justify-content: center; */
@@ -47,8 +47,9 @@ input.input1 {
 .btn {
   width: 150px;
   height: 50px;
-  border-radius: 25px;
-  background: #e9b1db;
+  border-radius: 4px;
+  background-color: black;
+  color: #ffffff;
   outline: none;
   border: none;
   font-size: 20px;
@@ -58,8 +59,9 @@ button.btn {
   margin: 10px 30px 10px 10px;
 }
 
-button.btn :hover {
-  background-color: rgb(255, 226, 230);
+.btn:hover {
+  background-color: white;
+  border: 1px solid black;
 }
 
 input {

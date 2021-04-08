@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
 
 body {
-  background-color: #f8e7e6;
+  background-color: #ffffff;
   font-family: "Google Sans", cursive;
 }
 
@@ -46,7 +46,7 @@ img {
 .container-contact1 {
   /*box of contact us*/
   width: 550px;
-  background: #cae4e9;
+  background: rgb(255, 226, 230);
   border-radius: 30px;
   overflow: hidden;
   display: flex;
@@ -118,13 +118,12 @@ textarea {
 }
 
 .contact1-form-btn {
-  width: 193px;
   height: 50px;
-  border-radius: 25px;
-  background: #e9b1db;
+  width: 100%;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
   font-size: 20px;
-  /* line-height: 1.5; */
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,5 +133,7 @@ textarea {
 }
 
 .contact1-form-btn:hover {
-  background: #333333;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }

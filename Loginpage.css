@@ -9,14 +9,15 @@
 }
 
 body {
-  background: #cae4e9;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .row {
-  background: linear-gradient(to top left, #f8e7e6, white);
+  background-color: rgb(255, 231, 234);
+  /* background: linear-gradient(to top left, #f8e7e6, white); */
   border-radius: 30px;
   box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.1);
 }
