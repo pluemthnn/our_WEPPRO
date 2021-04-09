@@ -57,51 +57,75 @@
             </div>
         </nav>
     </div>
-    <div class="container pt-3">
-        <div class="row pt-1 pb-1">
-            <div class="col-lg-12">
-                <h4 class="text-center">Want to find the event?</h4>
-                <h6 class="text-center"></h6>
+<!-- Main -->    
+    <main>
+        <div class="container pt-3">
+            <div class="row pt-1 pb-1">
+                <div class="col-lg-12">
+                    <h4 class="text-center">Want to find the event?</h4>
+                    <h6 class="text-center"></h6>
+                </div>
             </div>
         </div>
-    </div>
-    <section class="search-sec pt-3">
-        <div class="container">
-            <form action="#" method="" novalidate="novalidate">
-                <div class="row p-3" id="formrow">
-                    <div class="col-lg-6 py-1 col-md-3 col-sm-12 px-1">
-                        <input type="text" class="form-control search-slt" placeholder="Event name">
+        <section class="search-sec pt-3 ">
+            <div class="container">
+                <form action="#" method="GET">
+                    <div class="row p-3" id="formrow">
+                        <div class="col-lg-4 py-1 col-md-3 col-sm-12 px-1">
+                            <input type="text" class="form-control search-slt" placeholder="Event name">
+                        </div>
+                        <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
+                            <input type="text" class="form-control search-slt" placeholder="Event Drop City">
+                        </div>
+                        <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
+                            <select class="form-control search-slt" id="exampleFormControlSelect1">
+                                <option>Select Location</option>
+                                <option value="bangkok">Bangkok</option>
+                                <option value="thonglor">ThongLor</option>
+                                <option value="asoke">Asoke</option>
+                                <option value="siam">Siam</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
+                            <select class="form-control search-slt" id="exampleFormControlSelect1">
+                                <option>Select Event Type</option>
+                                <option value="consert">consert</option>
+                                <option value="game">e-sport</option>
+                                <option value="comedy">comedy</option>
+                                <option value="art">art&design</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-1 py-1 col-md-3 col-sm-12 px-1">
+                            <button type="button" class="btn" onclick="">Search</button>
+                        </div>
                     </div>
-                    <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
-                        <input type="text" class="form-control search-slt" placeholder="Event Drop City">
-                    </div>
-                    <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
-                        <select class="form-control search-slt" id="exampleFormControlSelect1">
-                            <option>Select Location</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
-                        <button type="button" class="btn">Search</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div id="output"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="text-center p-3" style="background-color: #e3f2fd; margin-top: 100px;">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">Eventertainment.com</a>
         </div>
-    </section>
+    </footer>
+
 </body>
 <script>
     function go() {
-        place = document.getElementsByTagName('option')
+        let place = document.getElementsByTagName('option')
         for (var i = 0; i < place.length; i++) {
             console.log(place[i].value);
         }
         document.getElementById('lnk').click();
     }
+    // function search(){
+    //     let input = document.g
+    // }
 
 </script>
 
