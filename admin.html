@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Admin Page</title>
+</head>
+
+<body>
+  User Management<br>
+  <input type="text" class="input1" id="txtusername" placeholder="Username" />
+  <br />
+  <input type="text" class="input1" id="txtpwd" placeholder="Password" /><br />
+  <input type="text" class="input1" id="txtemail" placeholder="E-mail" /><br />
+  <input type="text" class="input1" id="txtfname" placeholder="First name" /><br />
+  <input type="text" class="input1" id="txtlname" placeholder="Last name" /><br />
+  Birthdate <input type="date" class="input1" id="cldBD" /><br />
+  <input type="text" class="input1" id="txtphone" placeholder="Phone" /><br />
+  <button type="submit" id="insert">Insert</button>
+  <button type="submit" id="update">Update</button>
+  <button type="submit" id="delete">Delete</button>
+  <button type="submit" id="test" onclick="selectuser()">Check username</button>
+  **Please check the username before pressing the button**
+  <br /><br /><br />
+
+  Event Management<br>
+  <input type="text" class="input2" id="txteventID" placeholder="EventID" /> <br />
+  <input type="text" class="input2" id="txteventName" placeholder="Eventname"/><br />
+  <input type="text" class="input2" id="txteventDT" placeholder="Event Date Time YYYY-MM-DD HH-MM-SS"/><br />
+  <input type="text" class="input2" id="txtlocation" placeholder="Location"/><br />
+  <input type="text" class="input2" id="txtdesc"  placeholder="Event_Description" /><br />
+  Event Type <select class="input2" id="Event_type"  /><br />
+    <option value="Comedy">Comedy</option>
+    <option value="E-sport">E-sport</option>
+    <option value="Concert">Concert</option>
+    <option value="Art-design">Art-design</option>
+  </select><br />
+  <input type="text" class="input2" id="imgURL"  placeholder="Image URL"/><br />
+  <button type="submit" id="insert2">Insert</button>
+  <button type="submit" id="update2">Update</button>
+  <button type="submit" id="delete2">Delete</button>
+
+  <script src="adminhandler.js" type="text/javascript"></script>
+</body>
+
+</html>
