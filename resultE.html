@@ -139,7 +139,7 @@ img {
             <div class="col-lg-7 px-5 pt-5">
               <h1 class="font-weight-blod py-3">Logo</h1>
             <div>   <h2 id="eventname"></h2></div>
-
+                <p> <h5 id ="etype"></h5></p>
             <p>  <h4 id= "location"> </h4> </p> 
             <p><h4 id="Datetime"> </h4></p>
             <p><h5 id ="describe"></h5></p>
@@ -178,6 +178,7 @@ img {
             console.log(data);
 
             document.getElementById('eventname').innerHTML = `${data.result.name} <br/> `;
+            document.getElementById('etype').innerHTML = `- ${data.result.etype} -`;
             document.getElementById('location').innerHTML = `<i class="fas fa-map-marker-alt" style="color: #9e293b"></i>   ${data.result.place} <br/> `;
             document.getElementById('Datetime').innerHTML = `<i class="fas fa-calendar-day" style="color: #9e293b" ></i> ${dayjs(data.result.date).format("DD MMMM YYYY")} &nbsp;&nbsp; <i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.result.date).format('HH:mm')}`;
             document.getElementById('describe').innerHTML = `${data.result.des} `;
