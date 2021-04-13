@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-radius: 30px;
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100%;
+}
+
+body {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  background-color: rgb(255, 231, 234);
+  /* background: linear-gradient(to top left, #f8e7e6, white); */
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-radius: 30px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.form-control {
+  border-radius: 25px;
+}
+
+
+
+    </style>
+    <!-- Link Icon-->
+    <script src="https://kit.fontawesome.com/114906923e.js" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  
+   
+  
+    <title>Event details</title>
+  </head>
+  
+  <body>
+    <!-- Navigation-->
+    <section id="app">
+      <nav class="navbar navbar-expand-lg navbar-navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+          <!-- Icono de NAVBAR -->
+          <nav class="navbar navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="Homepage.html">
+                <h6 class="font-weight-blod px-1 pt-1">Logo</h6>
+                <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">         -->
+              </a>
+            </div>
+          </nav>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="Homepage.html" class="nav-link" aria-current="page">Events</a>
+              </li>
+              <li class="nav-item">
+                <a href="aboutus.html" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="search.html" class="nav-link">Search</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="Loginpage.html" class="nav-link" aria-current="page">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="register.html" class="nav-link" aria-current="page">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+       <!--THE END OF Navigation-->
+
+
+      <!-- page start -->
+      <section class="Form my-4 mx-5">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-lg-5">
+              <!-- <img src="" class="img-fluid" alt="imgg"> -->
+                 <p id ="gdoys"></p>
+            </div>
+
+            <div class="col-lg-7 px-5 pt-5">
+              <h1 class="font-weight-blod py-3">Logo</h1>
+            <div>   <h2 id="eventname"></h2></div>
+
+            <p>  <h4 id= "location"> </h4> </p> 
+            <p><h4 id="Datetime"> </h4></p>
+            <p><h5 id ="describe"></h5></p>
+
+          
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    </section>
+    <!-- Project over load TT pluem need 48hr per day-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script type="text/javascript">
+
+  //localhost:3040/event?type=1
+  const query = decodeURIComponent(window.location);
+    var event = query.split('?')[1]
+    var type = event.split('=')[1]
+    console.log(type)
+    async function callserver(url) {
+        let data;
+        let response = await fetch(url, {
+        method: "GET",
+        });
+        data = await response.json();
+
+        return data;
+    }
+    callserver(`http://localhost:3040/showevent/${type}`)
+        .then((data)=>{
+            console.log(data);
+
+            document.getElementById('eventname').innerHTML = `${data.result.name} <br/> `;
+            document.getElementById('location').innerHTML = `<i class="fas fa-map-marker-alt" style="color: #9e293b"></i>   ${data.result.place} <br/> `;
+            document.getElementById('Datetime').innerHTML = `<i class="fas fa-calendar-day" style="color: #9e293b" ></i> ${dayjs(data.result.date).format("DD MMMM YYYY")} &nbsp;&nbsp; <i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.result.date).format('HH:mm')}`;
+            document.getElementById('describe').innerHTML = `${data.result.des} `;
+            document.getElementById('gdoys').innerHTML = `<img src="${data.result.img}" class="img-fluid"> `;
+             
+            
+          })
+          
+  </script>
+
+  </body>
+
+  
+</html>
