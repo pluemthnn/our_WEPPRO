@@ -14,14 +14,14 @@ router.use(bp.json());
 router.use(bp.urlencoded({ extended: true }));
 
 //create server
-const myserve = http.createServer((req, res) => {
-  console.log(`url ${req.url}`);
-  console.log(`method ${req.method}`);
+// const myserve = http.createServer((req, res) => {
+//   console.log(`url ${req.url}`);
+//   console.log(`method ${req.method}`);
 
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.write("request");
-});
+//   res.statusCode = 200;
+//   res.setHeader("Content-Type", "text/plain");
+//   res.write("request");
+// });
 
 //create connection
 var con = mysql.createConnection({
@@ -51,7 +51,7 @@ router.get("/home", (req, res) => {
 router.get("/result/:event", (req, res) => {
   var event_type = req.params.event;
   // console.log(event_type);
-  //localhost:3020/event?type=1
+  //localhost:3020/event?type=CC001
   res.redirect("/event?type=" + event_type);
 });
 
