@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
+
+body {
+  background-color: #ffffff;
+  font-family: "Google Sans", cursive;
+}
+
+/* ---------------TEAM MEMBER PART -------------*/
+
+h1 {
+  padding-top: 40px;
+}
+img {
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.col {
+  /* background-color: palevioletred; */
+  border-radius: 20px;
+}
+
+.name {
+  text-align: center;
+}
+.body {
+  /* background-color: beige; */
+  margin-block-start: 20px;
+  margin-inline-end: 20px;
+}
+.text {
+  text-align: center;
+}
+
+/* ---------------CONTACT US PART --------------*/
+.contact1 {
+  width: 100%;
+  min-height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-contact1 {
+  /*box of contact us*/
+  width: 550px;
+  background: rgb(255, 226, 230);
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.1);
+}
+
+.contact1-form {
+  width: 390px; /*input box form's length*/
+}
+
+.contact1-form-title {
+  /*Title: Contact Us*/
+  display: block;
+  font-size: 24px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+/*---------------------------------------------*/
+input.input1 {
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px;
+}
+
+textarea.input1 {
+  min-height: 150px;
+  border-radius: 25px;
+  padding: 12px 30px;
+}
+
+.wrap-input1 {
+  /*a space between input box*/
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.input1 {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+  /* color: #666666;  */
+}
+
+input {
+  outline: none;
+  border: none;
+}
+textarea {
+  outline: none;
+  border: none;
+}
+
+/*---------------BUTTON---------------*/
+.container-contact1-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact1-form-btn {
+  height: 50px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  outline: none;
+  border: none;
+}
+
+.contact1-form-btn:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}

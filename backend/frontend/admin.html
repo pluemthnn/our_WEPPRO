@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Animate CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <title>Adminpage | Eventertainment</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
+
+        * {
+            text-align: center;
+            font-family: "Google Sans", cursive;
+        }
+
+        body {
+            background: #ffffff;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+
+        #box {
+            background-color: rgb(255, 226, 230);
+            box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            width: 90vh;
+            height: 100%;
+            margin: 20px 0px;
+        }
+
+        h2 {
+            padding-top: 20px;
+        }
+
+        .container-btn {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* padding-top: 20px;
+  padding-bottom: 20px; */
+            padding: 20px 20px;
+        }
+
+        input.input1 {
+            text-align: left;
+        }
+
+        .input1 {
+            outline: none;
+            border: none;
+            width: 50%;
+            height: 50px;
+            border-radius: 25px;
+            padding: 0 30px;
+        }
+
+        /*---------------BUTTON---------------*/
+        .btn {
+            width: 30%;
+            height: 40px;
+            border-radius: 4px;
+            background-color: black;
+            color: #ffffff;
+            outline: none;
+            border: none;
+            font-size: 16px;
+        }
+
+        button.btn {
+            margin: 10px 30px 10px 10px;
+        }
+
+        .btn:hover {
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        input {
+            margin-bottom: 20px;
+            /* space between input box */
+        }
+
+        .btn2 {
+            width: 20%;
+            height: 40px;
+            border-radius: 4px;
+            background-color: black;
+            color: #ffffff;
+            outline: none;
+            border: none;
+            font-size: 16px;
+        }
+
+        button.btn2 {
+            margin: 10px 30px 10px 10px;
+        }
+
+        .btn2:hover {
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="admin.css" /> -->
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-navbar-light" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+                <!-- Icono de NAVBAR -->
+                <nav class="navbar navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="/Homepage">
+                            <img src="https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/logo.svg"
+                                alt="" style="width: 90px; height: 70px" class="d-inline-block align-top" />
+                        </a>
+                    </div>
+                </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="/Homepage" class="nav-link" aria-current="page">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/aboutuspage" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/searchpage" class="nav-link">Search</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="/loginpage" class="nav-link" aria-current="page">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/registerpage" class="nav-link" aria-current="page">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <br>
+    <div class="container" style="display: flex; align-items: center; justify-content: center;">
+        <div id="box">
+            <br>User Management<br><br>
+            <input type="text" class="input1" id="txtusername" placeholder="Username" />
+            <br />
+            <input type="text" class="input1" id="txtpwd" placeholder="Password" /><br />
+            <input type="text" class="input1" id="txtemail" placeholder="E-mail" /><br />
+            <input type="text" class="input1" id="txtfname" placeholder="First name" /><br />
+            <input type="text" class="input1" id="txtlname" placeholder="Last name" /><br />
+            <input type="date" class="input1" id="cldBD" /><br />
+            <input type="text" class="input1" id="txtphone" placeholder="Phone" /><br />
+            <button type="submit" class="btn" id="insert">Insert</button>
+            <button type="submit" class="btn" id="update">Update</button>
+            <button type="submit" class="btn" id="delete">Delete</button>
+            <button type="submit" class="btn" id="test" onclick="selectuser()">Check username</button>
+            <br>**Please check the username before pressing the button**<br>
+            <br>
+        </div>
+    </div><br />
+
+    <div class="container" style="display: flex; align-items: center; justify-content: center;">
+        <div id="box">
+            <br>Event Management<br><br>
+            <input type="text" class="input1" id="txteventID" placeholder="EventID" /> <br />
+            <input type="text" class="input1" id="txteventName" placeholder="Eventname" /><br />
+            <input type="text" class="input1" id="txteventDT" placeholder="Time YYYY-MM-DD HH-MM-SS" /><br />
+            <input type="text" class="input1" id="txtlocation" placeholder="Location" /><br />
+            <input type="text" class="input1" id="txtdesc" placeholder="Event_Description" /><br />
+            <select class="input1" id="Event_type"><br />
+                <option value="Comedy">Comedy</option>
+                <option value="E-sport">E-sport</option>
+                <option value="Concert">Concert</option>
+                <option value="Art-design">Art-design</option>
+            </select><br />
+            <br><input type="text" class="input1" id="imgURL" placeholder="Image URL" /><br />
+            <button type="submit" class="btn2" id="insert2">Insert</button>
+            <button type="submit" class="btn2" id="update2">Update</button>
+            <button type="submit" class="btn2" id="delete2">Delete</button>
+            <br><br>
+        </div>
+    </div>
+
+    <!-- <script src="adminhandler.js" type="text/javascript"></script> -->
+    <script>
+        async function callUserWS(url, method, sentData = {}) {
+            let data;
+            if (method == "select") {
+                let response = await fetch(url, {
+                    method: "GET",
+                });
+                data = await response.json();
+            } else if (method == "selectall") {
+                let response = await fetch(url, {
+                    method: "GET",
+                });
+                data = await response.json();
+            } else if (method == "insert") {
+                let response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify(sentData),
+                });
+                data = await response.json();
+            } else if (method == "update") {
+                let response = await fetch(url, {
+                    method: "PUT",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify(sentData),
+                });
+                data = await response.json();
+            } else if (method == "delete") {
+                let response = await fetch(url, {
+                    method: "DELETE",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify(sentData),
+                });
+                data = await response.json();
+            }
+            return data;
+        }
+
+        // -----------------------------------------------------
+
+        // let selectallBtnRef = document.querySelector("#selectall");
+        // selectallBtnRef.addEventListener("click", () => {
+        //     let output = document.getElementById("result");
+        //     let text = "";
+        //     callUserWS("http://localhost:3030/user_data/", "selectall").then(
+        //         (data) => {
+        //             if (data) {
+        //                 alert(data.message);
+        //                 for (const x of data.data) {
+        //                     let usr_name = x.Username;
+        //                     text += `User Name ${usr_name}`;
+        //                 }
+        //                 output.innerHTML = text;
+        //             }
+        //         }
+        //     );
+        // });
+
+        // User Part
+
+        let insertBtnRef = document.querySelector("#insert");
+        insertBtnRef.addEventListener("click", () => {
+            let usr_name = document.getElementById("txtusername").value;
+            let usr_pwd = document.getElementById("txtpwd").value;
+            let usr_email = document.getElementById("txtemail").value;
+            let usr_fname = document.getElementById("txtfname").value;
+            let usr_lname = document.getElementById("txtlname").value;
+            let usr_bd = document.getElementById("cldBD").value;
+            let usr_phone = document.getElementById("txtphone").value;
+            let usr_data = {
+                Username: usr_name,
+                User_pwd: usr_pwd,
+                Email: usr_email,
+                Fname: usr_fname,
+                Lname: usr_lname,
+                DOB: usr_bd,
+                Phone: usr_phone,
+                user_role: "1",
+            };
+            callUserWS(
+                "http://localhost:3030/user-form-create/",
+                "insert",
+                usr_data
+            ).then((data) => {
+                console.log(data);
+                alert("Insert Successfully");
+            });
+        });
+
+        let updateBtnRef = document.querySelector("#update");
+        updateBtnRef.addEventListener("click", () => {
+            let usr_name = document.getElementById("txtusername").value;
+            let usr_pwd = document.getElementById("txtpwd").value;
+            let usr_email = document.getElementById("txtemail").value;
+            let usr_fname = document.getElementById("txtfname").value;
+            let usr_lname = document.getElementById("txtlname").value;
+            let usr_bd = document.getElementById("cldBD").value;
+            let usr_phone = document.getElementById("txtphone").value;
+            let usr_data = {
+                Username: usr_name,
+                User_pwd: usr_pwd,
+                Email: usr_email,
+                Fname: usr_fname,
+                Lname: usr_lname,
+                DOB: usr_bd,
+                Phone: usr_phone,
+                user_role: "1",
+            };
+            callUserWS(
+                "http://localhost:3030/user-form-update/",
+                "update",
+                usr_data
+            ).then((data) => {
+                console.log(data);
+                alert("Update Successfully");
+            });
+        });
+
+        let deleteBtnRef = document.querySelector("#delete");
+        deleteBtnRef.addEventListener("click", () => {
+            let usr_name = document.getElementById("txtusername").value;
+            let usr_data = {
+                Username: usr_name,
+            };
+            callUserWS(
+                "http://localhost:3030/user-form-delete/",
+                "delete",
+                usr_data
+            ).then((data) => {
+                console.log(data);
+                alert("Delete Successfully");
+            });
+        });
+
+        function selectuser() {
+            let usr_name = document.getElementById("txtusername").value;
+            callUserWS("http://localhost:3030/user_data/" + usr_name, "select").then(
+                (data) => {
+                    console.log(data.data);
+                    if (data.data != undefined) {
+                        alert("Username already exist");
+                    } else {
+                        alert("You can use this username");
+                    }
+                }
+            );
+        }
+
+        // Event Part
+        let insertBtnRef2 = document.querySelector("#insert2");
+        insertBtnRef2.addEventListener("click", () => {
+            let evt_id = document.getElementById("txteventID").value;
+            let evt_name = document.getElementById("txteventName").value;
+            let evt_dt = document.getElementById("txteventDT").value;
+            let evt_loc = document.getElementById("txtlocation").value;
+            let evt_desc = document.getElementById("txtdesc").value;
+            let evt_type = document.getElementById("Event_type").value;
+            let evt_url = document.getElementById("imgURL").value;
+            let evt_data = {
+                EventID: evt_id,
+                Eventname: evt_name,
+                DATE_TIME: evt_dt,
+                Location: evt_loc,
+                Event_Description: evt_desc,
+                Eventtype: evt_type,
+                imgURL: evt_url,
+            };
+            callUserWS(
+                "http://localhost:3030/event-form-create/",
+                "insert",
+                evt_data
+            ).then((data) => {
+                console.log(data);
+                alert("Insert Successfully");
+            });
+        });
+
+        let updateBtnRef2 = document.querySelector("#update2");
+        updateBtnRef2.addEventListener("click", () => {
+            let evt_id = document.getElementById("txteventID").value;
+            let evt_name = document.getElementById("txteventName").value;
+            let evt_dt = document.getElementById("txteventDT").value;
+            let evt_loc = document.getElementById("txtlocation").value;
+            let evt_desc = document.getElementById("txtdesc").value;
+            let evt_type = document.getElementById("Event_type").value;
+            let evt_url = document.getElementById("imgURL").value;
+            let evt_data = {
+                EventID: evt_id,
+                Eventname: evt_name,
+                DATE_TIME: evt_dt,
+                Location: evt_loc,
+                Event_Description: evt_desc,
+                Eventtype: evt_type,
+                imgURL: evt_url,
+            };
+            callUserWS(
+                "http://localhost:3030/event-form-update/",
+                "update",
+                evt_data
+            ).then((data) => {
+                console.log(data);
+                alert("Update Successfully");
+            });
+        });
+
+        let deleteBtnRef2 = document.querySelector("#delete2");
+        deleteBtnRef2.addEventListener("click", () => {
+            let evt_id = document.getElementById("txteventID").value;
+            let evt_data = {
+                EventID: evt_id,
+            };
+            callUserWS(
+                "http://localhost:3030/event-form-delete/",
+                "delete",
+                evt_data
+            ).then((data) => {
+                console.log(data);
+                alert("Delete Successfully");
+            });
+        });
+    </script>
+</body>
+
+</html>

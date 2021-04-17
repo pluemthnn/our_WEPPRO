@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS and JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <title>Homepage | Eventertainment</title>
+  <style>
+    .contenedor {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      position: fixed;
+      align-items: center;
+      justify-content: center;
+      color: #5e559c;
+    }
+
+    /* css for carousel(banner) */
+    .carousel-item {
+      height: 50vh;
+      background: #777;
+    }
+
+    .container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 50px;
+    }
+
+    article {
+      text-align: center;
+      padding: 30px;
+    }
+
+    /* .crop {
+        width: 200px;
+        height: 150px;
+        overflow: hidden;
+    } */
+
+    img {
+      width: 400px;
+      height: 300px;
+      /* margin: -75px 0 0 -100px; */
+    }
+
+    .card {
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation-->
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd">
+      <div class="container-fluid">
+        <nav class="navbar navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/Homepage">
+              <img
+                src="https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/logo.svg"
+                alt="" style="width: 90px; height: 70px" class="d-inline-block align-top" />
+            </a>
+          </div>
+        </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="/Homepage" class="nav-link" aria-current="page">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="/aboutuspage" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="/searchpage" class="nav-link">Search</a>
+          </li>
+          </ul>
+          <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="/loginpage" class="nav-link" aria-current="page">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="/registerpage" class="nav-link" aria-current="page">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- THE END OF Navigation-->
+
+  <!-- Carousel -->
+  <div id="Carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#Carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"
+        aria-current="true"></button>
+      <button type="button" data-bs-target="#Carousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#Carousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <!-- banner1 -->
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="
+            background-image: url(https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/bannernew1test.svg);
+            background-size: cover;
+          ">
+        <div class="container">
+          <div class="carousel-caption">
+            <h2>Discover new experiences here</h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <!-- banner2 -->
+      <div class="carousel-item" style="
+            background-image: url(https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/bannernew2test.svg);
+            background-size: cover;
+          ">
+        <div class="container">
+          <div class="carousel-caption">
+            <h2>adding ...</h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <!-- banner3 -->
+      <div class="carousel-item" style="
+            background-image: url(https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/bannernew3test.svg);
+            background-size: cover;
+          ">
+        <div class="container">
+          <div class="carousel-caption">
+            <h2>adding ...</h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#Carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#Carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- THE END OF Carousel -->
+
+  <article id="Upcoming">
+    <h2>Upcoming Event</h2>
+  </article>
+  <!-- Upcoming Event 1st row -->
+  <div class="container-fluid">
+    <div class="row">
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/AD001" style="color: #000000" target="_blank">
+          <div class="card mx-auto my-10" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/02Wgyqa.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">Interior Design Consultation</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/CC002" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/6bg7ytp.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">EDM Night</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/CM002" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/kOGZolt.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">Stan Up Comedy</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/AD002" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/Do4F6jA.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">The Self-Portrait</p>
+            </div>
+          </div>
+        </a>
+      </section>
+    </div>
+  </div>
+  <!-- THE END OF Upcoming Event 1st row -->
+
+  <!-- Upcoming Event 2nd row -->
+  <div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/CC001" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/iNbB8aJ.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">Buffalo Music Festival</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="result/EP001" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/z6mLlQg.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">EGAME League Season 3.5</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/CM001" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/6kF5B1w.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">The Final Comedy</p>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <section class="col-12 col-md-6 col-lg-3">
+        <a href="/result/CC003" style="color: #000000" target="_blank">
+          <div class="card mx-auto" style="width: 18rem; height: 23rem">
+            <img src="https://i.imgur.com/Tl2zJ65.png" class="card-img-top" alt="concert" />
+            <div class="card-body">
+              <p class="card-text">International Jazz Day</p>
+            </div>
+          </div>
+        </a>
+      </section>
+    </div>
+  </div>
+
+  <!-- THE END OF Upcoming Event 2nd row -->
+
+  <footer>
+    <div class="text-center p-3" style="background-color: #e3f2fd; margin-top: 30px">
+      © 2020 Copyright:
+      <a class="text-dark"
+        href="https://www.notion.so/wooo-hooooo-2061b576f9364a4d92cc084beb888fa8">Eventertainment.com</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+    integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+    integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
