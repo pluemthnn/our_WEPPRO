@@ -12,14 +12,14 @@ app.use("/", router);
 router.use(bp.json());
 router.use(bp.urlencoded({ extended: true }));
 
-var dbConn = mysql.createConnection({
+var connection = mysql.createConnection({
   host: process.env.host,
   user: process.env.DB_user,
   password: process.env.DB_pass,
   database: process.env.DB_name,
 });
 
-dbConn.connect(function (err) {
+connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected DB: " + process.env.DB_name);
 });
@@ -57,7 +57,7 @@ router.post("/user-form-create", function (req, res) {
       .status(400)
       .send({ error: true, message: "Please provide user information" });
   }
-  dbConn.query(
+  connection.query(
     "INSERT INTO info SET ? ",
     usr,
     function (error, results) {
@@ -102,7 +102,7 @@ router.put("/user-form-update", function (req, res) {
       .status(400)
       .send({ error: theuser, message: "Please provide user information" });
   }
-  dbConn.query(
+  connection.query(
     "UPDATE info SET ? WHERE Username = ?",
     [theuser, usr_name],
     function (error, results) {
@@ -134,7 +134,7 @@ router.delete("/user-form-delete", function (req, res) {
       .status(400)
       .send({ error: true, message: "Please provide username" });
   }
-  dbConn.query(
+  connection.query(
     "DELETE FROM info WHERE Username = ?",
     [usr_name],
     function (error, results) {
@@ -155,7 +155,7 @@ router.get("/user_data/:Username", function (req, res) {
       .status(400)
       .send({ error: true, message: "Please provide student id." });
   }
-  dbConn.query(
+  connection.query(
     "SELECT * FROM info where Username=?",
     usr_name,
     function (error, results) {
@@ -166,7 +166,7 @@ router.get("/user_data/:Username", function (req, res) {
 });
 
 // router.get("/user_data", function (req, res) {
-//   dbConn.query("SELECT * FROM info", function (error, results) {
+//   connection.query("SELECT * FROM info", function (error, results) {
 //     if (error) throw error;
 //     return res.send({ error: false, data: results, message: "User list." });
 //   });
@@ -205,7 +205,7 @@ router.post("/event-form-create", function (req, res) {
       .status(400)
       .send({ error: true, message: "Please provide event information" });
   }
-  dbConn.query(
+  connection.query(
     "INSERT INTO Event_data SET ? ",
     evt,
     function (error, results) {
@@ -250,7 +250,7 @@ router.put("/event-form-update", function (req, res) {
       .status(400)
       .send({ error: event, message: "Please provide event information" });
   }
-  dbConn.query(
+  connection.query(
     "UPDATE Event_data SET ? WHERE EventID = ?",
     [event, evt_id],
     function (error, results) {
@@ -282,7 +282,7 @@ router.delete("/event-form-delete", function (req, res) {
       .status(400)
       .send({ error: true, message: "Please provide event id" });
   }
-  dbConn.query(
+  connection.query(
     "DELETE FROM Event_data WHERE EventID = ?",
     [evt_id],
     function (error, results) {
