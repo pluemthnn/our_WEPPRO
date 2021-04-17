@@ -21,9 +21,8 @@
                 <nav class="navbar navbar-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="Homepage.html">
-                            <h6 class="font-weight-blod px-1 pt-1"></h6>
-                            <i class="fas fa-fire-alt inline-block align-top" width="40" height="40"></i>
-                            <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-top">         -->
+                            <img src="https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/logo.svg"
+                                alt="" style="width: 90px; height: 70px" class="d-inline-block align-top" />
                         </a>
                     </div>
                 </nav>
@@ -71,8 +70,7 @@
                 <form action="#" method="GET">
                     <div class="row p-3" id="formrow">
                         <div class="col-lg-4 py-1 col-md-3 col-sm-12 px-1">
-                            <input type="text" name="name" class="form-control search-slt"
-                                placeholder="Event name">
+                            <input type="text" name="name" class="form-control search-slt" placeholder="Event name">
                         </div>
                         <div class="col-lg-2 py-1 col-md-3 col-sm-12 px-1">
                             <select class="form-control search-slt" name="month" placeholder="Event Drop City">
@@ -151,16 +149,16 @@
         if (searchName) {
             console.log('Send search from name: ' + searchName)
             fetch(`http://localhost:3030/search?name=${searchName}&city=${searchCity}&type=${searchType}&month=${searchMonth}`)
-            .then((c) => c.json())
-            .then((d) => {
-                const result = d.result
-                if (result == "") {
-                    resultElem.innerHTML = `<span><b>No Data</b></span><br />`
-                }
-                result.forEach((data) => {
-                    console.log(data)
-                    resultElem.innerHTML +=
-                        `<div class="col-5 p-5">
+                .then((c) => c.json())
+                .then((d) => {
+                    const result = d.result
+                    if (result == "") {
+                        resultElem.innerHTML = `<span><b>No Data</b></span><br />`
+                    }
+                    result.forEach((data) => {
+                        console.log(data)
+                        resultElem.innerHTML +=
+                            `<div class="col-5 p-5">
                         <img class="img-fluid" style="width: auto; height: auto;" alt="connot load picture" src="${data.imgURL}"></div>
                         <div class="col-7 pt-5">
                         <h5 class="card-title">${data.Eventname}</h5><br />
@@ -170,25 +168,25 @@
                             &nbsp<i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.DATE_TIME).format("HH:MM")} </span><br /> 
                         <br /> <p>${data.Event_Description}"</p>
                         </div>`
+                    })
+                    resultElem.innerHTML += '</div></div>'
                 })
-                resultElem.innerHTML += '</div></div>'
-            })
-            .catch(function (err) {
-                console.log('error : ' + err);
-            })   
-        }else if(searchCity && searchCity != "") {
+                .catch(function (err) {
+                    console.log('error : ' + err);
+                })
+        } else if (searchCity && searchCity != "") {
             console.log('Send search from city: ' + searchCity)
             fetch(`http://localhost:3030/search?city=${searchCity}&type=${searchType}&month=${searchMonth}`)
-            .then((c) => c.json())
-            .then((d) => {
-                const result = d.result
-                if (result == "") {
-                    resultElem.innerHTML = `<span><b>No Data</b></span><br />`
-                }
-                result.forEach((data) => {
-                    console.log(data)
-                    resultElem.innerHTML +=
-                        `<div class="col-5 p-5">
+                .then((c) => c.json())
+                .then((d) => {
+                    const result = d.result
+                    if (result == "") {
+                        resultElem.innerHTML = `<span><b>No Data</b></span><br />`
+                    }
+                    result.forEach((data) => {
+                        console.log(data)
+                        resultElem.innerHTML +=
+                            `<div class="col-5 p-5">
                         <img class="img-fluid" style="width: auto; height: auto;" alt="connot load picture" src="${data.imgURL}"></div>
                         <div class="col-7 pt-5">
                         <h5 class="card-title">${data.Eventname}</h5><br />
@@ -198,25 +196,25 @@
                             &nbsp<i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.DATE_TIME).format("HH:MM")} </span><br /> 
                         <br /> <p>${data.Event_Description}"</p>
                         </div>`
+                    })
+                    resultElem.innerHTML += '</div></div>'
                 })
-                resultElem.innerHTML += '</div></div>'
-            })
-            .catch(function (err) {
-                console.log('error : ' + err);
-            })
-        }else if (searchType && searchType != "") {
-            console.log('Send search from type: ' + searchType )
+                .catch(function (err) {
+                    console.log('error : ' + err);
+                })
+        } else if (searchType && searchType != "") {
+            console.log('Send search from type: ' + searchType)
             fetch(`http://localhost:3030/search?type=${searchType}&month=${searchMonth}`)
-            .then((c) => c.json())
-            .then((d) => {
-                const result = d.result
-                if (result == "") {
-                    resultElem.innerHTML = `<span><b>No Data</b></span><br />`
-                }
-                result.forEach((data) => {
-                    console.log(data)
-                    resultElem.innerHTML +=
-                        `<div class="col-5 p-5">
+                .then((c) => c.json())
+                .then((d) => {
+                    const result = d.result
+                    if (result == "") {
+                        resultElem.innerHTML = `<span><b>No Data</b></span><br />`
+                    }
+                    result.forEach((data) => {
+                        console.log(data)
+                        resultElem.innerHTML +=
+                            `<div class="col-5 p-5">
                         <img class="img-fluid" style="width: auto; height: auto;" alt="connot load picture" src="${data.imgURL}"></div>
                         <div class="col-7 pt-5">
                         <h5 class="card-title">${data.Eventname}</h5><br />
@@ -226,25 +224,25 @@
                             &nbsp<i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.DATE_TIME).format("HH:MM")} </span><br />  
                         <br /> <p>${data.Event_Description}"</p>
                         </div>`
+                    })
+                    resultElem.innerHTML += '</div></div>'
                 })
-                resultElem.innerHTML += '</div></div>'
-            })
-            .catch(function (err) {
-                console.log('error : ' + err);
-            })
-        }else if (searchMonth && searchMonth != "") {
+                .catch(function (err) {
+                    console.log('error : ' + err);
+                })
+        } else if (searchMonth && searchMonth != "") {
             console.log('Send search from month: ' + searchMonth)
             fetch(`http://localhost:3030/search?month=${searchMonth}`)
-            .then((c) => c.json())
-            .then((d) => {
-                const result = d.result
-                if (result == "") {
-                    resultElem.innerHTML = `<span><b>No Data</b></span><br />`
-                }
-                result.forEach((data) => {
-                    console.log(data)
-                    resultElem.innerHTML +=
-                        `<div class="col-5 p-5">
+                .then((c) => c.json())
+                .then((d) => {
+                    const result = d.result
+                    if (result == "") {
+                        resultElem.innerHTML = `<span><b>No Data</b></span><br />`
+                    }
+                    result.forEach((data) => {
+                        console.log(data)
+                        resultElem.innerHTML +=
+                            `<div class="col-5 p-5">
                         <img class="img-fluid" style="width: auto; height: auto;" alt="connot load picture" src="${data.imgURL}"></div>
                         <div class="col-7 pt-5">
                         <h5 class="card-title">${data.Eventname}</h5><br />
@@ -254,16 +252,16 @@
                             &nbsp<i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.DATE_TIME).format("HH:MM")} </span><br /> 
                         <br /> <p>${data.Event_Description}"</p>
                         </div>`
+                    })
+                    resultElem.innerHTML += '</div></div>'
                 })
-                resultElem.innerHTML += '</div></div>'
-            })
-            .catch(function (err) {
-                console.log('error : ' + err);
-            })
+                .catch(function (err) {
+                    console.log('error : ' + err);
+                })
         }
     </script>
     <!-- <script src="OUR_WEPPRO/backend/function.js" type="text/javascript"></script> -->
-    <script src="https://kit.fontawesome.com/114906923e.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/114906923e.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

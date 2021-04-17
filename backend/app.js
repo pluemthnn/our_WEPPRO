@@ -8,8 +8,8 @@ const dotenv = require("dotenv");
 const router = express.Router();
 app.use('/', router);
 router.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+router.use(express.json())
+router.use(express.urlencoded({ extended: true }))
 
 /* Connection to MySQL */
 var connection = mysql.createConnection({
@@ -18,14 +18,48 @@ var connection = mysql.createConnection({
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE
 });
+
 /* Connection to DB*/
 connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected DB: " + process.env.MYSQL_DATABASE);
 });
 
-router.get('/', (req, res) => {
-  return res.send('Hello World')
+router.post('/auth', (req, res) => {
+  console.log('Hello auth');
+  console.log(req.body);
+  let username = req.body.username;
+  let password = req.body.password;
+  var flag;
+  let data = [];
+  if (username && password) {
+    connection.query('SELECT * FROM info WHERE Username = ? AND User_pwd = ?', [username, password], function (error, results) {
+      console.log(results[0]);
+      if (error) throw error;
+      if (results.length > 0) {
+        console.log('correct username and password');
+        flag=true
+        data.push(results[0]);
+        console.log(data);
+        //return res.write({message:`Input Correct \n WELLCOME ${username}`});
+        //return res.json({message:`Input Correct \n WELLCOME ${username}`});
+      } else {
+        console.log('Incorrect username and/or password');
+        //return res.send({error: false, data: results, message:'Incorrect Username and/or Password!'});
+      }
+    });
+    if (!flag) {
+      console.log('true');
+      res.send({userdata: data, message:`Input Correct \n WELLCOME ${username}`});
+    } else {
+      res.send({message:'Incorrect Username and/or Password!'});
+    }
+  }
+  else {
+    return res.status(400).send({ message: 'Please enter Username and Password!' });
+  }
+  //return res.send('Hello World');
+  res.end();
 })
 
 router.get('/search', (req, res) => {
@@ -59,8 +93,7 @@ router.get('/search', (req, res) => {
     }
     console.log(sql);
   }
-  else if (searchCt && searchCt != "") 
-  {
+  else if (searchCt && searchCt != "") {
     sql = "select * from Event_data WHERE Location = '" + searchCt + "'"; // {city}
     if (searchTy && searchTy != "") {
       sql += " AND Eventtype = '" + searchTy + "'"; // {city, type}
@@ -73,8 +106,7 @@ router.get('/search', (req, res) => {
     }
     console.log(sql);
   }
-  else if (searchTy && searchTy != "") 
-  {
+  else if (searchTy && searchTy != "") {
     sql = "select * from Event_data WHERE Eventtype = '" + searchTy + "'"; // {type}
     if (searchMt && searchMt != "") {
       sql += " AND MONTH(DATE_TIME) = '" + searchMt + "'"; // {type, month}
@@ -82,8 +114,7 @@ router.get('/search', (req, res) => {
     console.log(sql);
 
   }
-  else if (searchMt && searchMt != "") 
-  {
+  else if (searchMt && searchMt != "") {
     sql = "select * from Event_data WHERE MONTH(DATE_TIME) = '" + searchMt + "'"; // {month}
     console.log(sql);
 

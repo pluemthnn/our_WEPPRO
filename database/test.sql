@@ -33,3 +33,27 @@ SELECT * from Event_data WHERE Eventname LIKE '%n%' AND MONTH(DATE_TIME) = 7;
 
 select * from Event_data WHERE Eventname LIKE '%n%' AND Location = 'Watthana';
 select * from Event_data WHERE Eventname LIKE '%n%' AND Location = 'Ratchathewi' AND Eventtype = 'Comedy';
+
+CREATE TABLE info (
+  Username  varchar(255),
+  User_pwd  varchar(255),
+  Email varchar(255),
+  Fname varchar(255),
+  Lname varchar(255),
+  DOB date,
+  Phone varchar(10),
+  User_role varchar(1),  
+  login_log datetime
+);
+
+INSERT INTO info (Username, User_pwd, Email,Fname,Lname, DOB, Phone, User_role) VALUES 
+("Gdoysaga", "babyjubjub", "gdoyssaga@gmail.com", "Thanapron", "Khunprom", "2000-07-17", "0972656151","0"),
+("masterboy99","CherryFrappe","master99boy@gmail.com","Ratthakit","Sriprachayanun","2000-08-01","0881234567","0"),
+("akiracamelhorse","hwf7ffqwy","cdon.035@outlook.com","Ace","Ventura","1995-06-02","0649399369","1"),
+("dogcherry","djnvjcmke","Jimmyhopp@yahoo.com","Jim","Hopper","1999-10-10","0653282269","1"),
+("CuckooBlue","RiCATSwav","uzumaki_Naru1234@gmail.com","Naruto","Uzumaki","1991-12-23","0935545693","1"),
+("Mudpuppy","bonyupticket","Iwill-byebye@outlook.com","Will","Byers","1980-11-10","0929265493","1"),
+("belllolo","Akasaismyboyfriend","bellloveMU@outlook.com","Sathita","Intarachote","2000-08-10","0808949456","0"),
+("PluemloveJam","JamlovePluemtoo","pluemSWUzoozaa@gmail.com","Thanwarat","Wongtongtam","1997-05-11","0643294298","0"),
+("sorapure","57y64zj7g3vb","pureissorawitisrealO@outlook.com","Sorawit","Ongsri","1993-03-04","0993982946","0"),
+("mheeplatoo","bowkeyLION","catcat_lioncat@gmail.com","Bob","Newby","1988-09-09","0807985155","1");
