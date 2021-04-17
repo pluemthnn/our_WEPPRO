@@ -25,6 +25,30 @@ dbConn.connect(function (err) {
 });
 
 // User Part
+
+//method: post
+//url: http://localhost:3030/user-form-create
+//body: raw json
+// {
+//   "Username": "testuname",
+//   "User_pwd": "testupwd",
+//   "Email": "test@test.com",
+//   "Fname": "testfname",
+//   "Lname": "testlname",
+//   "DOB" : "2001-01-18",
+//   "Phone" : "0855555555"
+// }
+
+// {
+  //   "Username": "testuname2",
+  //   "User_pwd": "testupwd2",
+  //   "Email": "test@test2.com",
+  //   "Fname": "testfname2",
+  //   "Lname": "testlname",
+  //   "DOB" : "2005-08-28",
+  //   "Phone" : "0866666666"
+  // }
+
 router.post("/user-form-create", function (req, res) {
   let usr = req.body;
   console.log(usr);
@@ -47,6 +71,29 @@ router.post("/user-form-create", function (req, res) {
   );
 });
 
+//method: put
+//url: http://localhost:3030/user-form-update
+//body: raw json
+// {
+//   "Username": "testuname",
+//   "User_pwd": "testupwdupdated",
+//   "Email": "test@test.com",
+//   "Fname": "testfname",
+//   "Lname": "testlnameupdated",
+//   "DOB" : "2001-01-18",
+//   "Phone" : "0855555555"
+// }
+
+// {
+  //   "Username": "testuname2",
+  //   "User_pwd": "testupwd2",
+  //   "Email": "test@test2.com",
+  //   "Fname": "updated2",
+  //   "Lname": "testlname",
+  //   "DOB" : "2005-08-28",
+  //   "Phone" : "0877777777"
+  // }
+
 router.put("/user-form-update", function (req, res) {
   let usr_name = req.body.Username;
   let theuser = req.body;
@@ -68,6 +115,17 @@ router.put("/user-form-update", function (req, res) {
     }
   );
 });
+
+//method: delete
+//url: http://localhost:3030/user-form-delete
+//body: raw json
+// {
+//   "Username": "testuname"
+// }
+
+// {
+  //   "Username": "testuname2"
+  // }
 
 router.delete("/user-form-delete", function (req, res) {
   let usr_name = req.body.Username;
@@ -115,6 +173,30 @@ router.get("/user_data/:Username", function (req, res) {
 // });
 
 // Event Part
+
+//method: post
+//url: http://localhost:3030/event-form-update
+//body: raw json
+// {
+//   "EventID": "TS001",
+//   "Eventname": "TestEvent",
+//   "DATE_TIME": "2001-01-01 10-00-00",
+//   "Location": "Bangkok",
+//   "Event_Description": "Test Event Description",
+//   "Eventtype" : "E-sport",
+//   "imgURL" : "https://i.imgur.com/N9YU9nI.jpeg"
+// }
+
+// {
+//   "EventID": "TS002",
+//   "Eventname": "TestEventNumber2",
+//   "DATE_TIME": "2002-02-02 11-11-11",
+//   "Location": "Trad",
+//   "Event_Description": "Test Event Description Number2",
+//   "Eventtype" : "Comedy",
+//   "imgURL" : "https://i.imgur.com/i1hGd7U.jpg"
+// }
+
 router.post("/event-form-create", function (req, res) {
   let evt = req.body;
   console.log(evt);
@@ -137,6 +219,29 @@ router.post("/event-form-create", function (req, res) {
   );
 });
 
+//method: put
+//url: http://localhost:3030/event-form-update
+//body: raw json
+// {
+//   "EventID": "TS001",
+//   "Eventname": "TestEvent",
+//   "DATE_TIME": "2001-01-01 20-35-00",
+//   "Location": "Bangkok Updated",
+//   "Event_Description": "Test Event Description Updated",
+//   "Eventtype" : "E-sport",
+//   "imgURL" : "https://i.imgur.com/N9YU9nI.jpeg"
+// }
+
+// {
+//   "EventID": "TS002",
+//   "Eventname": "TestEventNumber2 Updated",
+//   "DATE_TIME": "2002-02-02 22-22-22",
+//   "Location": "Trad",
+//   "Event_Description": "Test Event Description Number2 Updated",
+//   "Eventtype" : "Comedy",
+//   "imgURL" : "https://i.imgur.com/i1hGd7U.jpg"
+// }
+
 router.put("/event-form-update", function (req, res) {
   let evt_id = req.body.EventID;
   let event = req.body;
@@ -158,6 +263,17 @@ router.put("/event-form-update", function (req, res) {
     }
   );
 });
+
+//method: delete
+//url: http://localhost:3030/event-form-delete
+//body: raw json
+// {
+//   "EventID": "TS001"
+// }
+
+// {
+//   "EventID": "TS002"
+// }
 
 router.delete("/event-form-delete", function (req, res) {
   let evt_id = req.body.EventID;
