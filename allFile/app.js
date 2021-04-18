@@ -37,7 +37,7 @@ router.post('/auth', async (req, res) => {
   if (username && password) {
     connection.query('SELECT * FROM info WHERE Username = ? AND User_pwd = ?', [username, password], function (error, results) {
       if (error) throw error;
-      if (results.length > 0) return res.send({ data: results[0], message: `Input Correct \n WELLCOME ${username}` });
+      if (results.length > 0) return res.send({ data: results[0], message: `Input Correct \n WELCOME ${username}` });
       return res.send({ message: 'Incorrect Username and/or Password!' });
     });
   }
