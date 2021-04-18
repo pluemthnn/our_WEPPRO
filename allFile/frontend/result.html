@@ -3,7 +3,7 @@
   <head>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Google+Sans&display=swap");
-      img {
+      #img {
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 0px;
@@ -94,9 +94,10 @@
           <!-- Icono de NAVBAR -->
           <nav class="navbar navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="Homepage.html">
-                <h6 class="font-weight-blod px-1 pt-1">Logo</h6>
-               
+              <a class="navbar-brand" href="/Homepage">
+                <img
+                  src="https://raw.githubusercontent.com/gdoyssaga/our_WEPPRO/22030122c194d3ff5b6b6907587e2ac418aac53f/image/logo.svg"
+                  alt="" style="width: 90px; height: 70px; padding:0%; border-radius: 0%;" class="d-inline-block align-top" />
               </a>
             </div>
           </nav>
@@ -143,7 +144,7 @@
               
               <h2 id="eventname"></h2>
                 <p> <h5 id ="etype"></h5></p>
-            <a href="https://replit.com/@gdoyssaga/WEPoo#main.sql" >  <h4 id= "location"> </h4> </a> 
+            <p><h4 id= "location"> </h4> </p> 
             <p><h4 id="Datetime"> </h4></p>
             <p><h5 id ="describe"></h5></p>
             <div id='map' style=' width: 500px; height: 400px;'></div>
@@ -203,7 +204,7 @@
     document.getElementById('location').innerHTML = `<i class="fas fa-map-marker-alt" style="color: #9e293b"></i>   ${data.result.place} <br/> `;
     document.getElementById('Datetime').innerHTML = `<i class="fas fa-calendar-day" style="color: #9e293b" ></i> ${dayjs(data.result.date).format("DD MMMM YYYY")} &nbsp;&nbsp; <i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.result.date).format('HH:mm')}`;
     document.getElementById('describe').innerHTML = `${data.result.des} `;
-    document.getElementById('gdoys').innerHTML = `<img src="${data.result.img}" class="img-fluid"> `;
+    document.getElementById('gdoys').innerHTML = `<img id="img" src="${data.result.img}" class="img-fluid"> `;
     // console.log(locationList[address]);
     
     //API MAPBOX
