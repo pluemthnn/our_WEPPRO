@@ -25,6 +25,9 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected DB: " + process.env.MYSQL_DATABASE);
+  console.log("Click Link to open Website");
+  console.log("http://localhost:3030/homepage");
+
 });
 
 router.post('/auth', async (req, res) => {
@@ -107,13 +110,6 @@ router.get('/search', (req, res) => {
 
 });
 
-// -------------------- Gdoyyy ------------------------
-// let sql = "select * from Event_data";
-// connection.query(sql, function (err, results) {
-//   if (err) throw err;
-//   console.log(results);
-// });
-
 // --------------------- path --------------------------
 router.get("/homepage", (req, res) => {
   //console.log(__dirname);
@@ -146,6 +142,13 @@ router.get("/adminpage", (req, res) => {
 });
 
 // --------------------- path --------------------------
+
+// -------------------- Gdoyyy ------------------------
+// let sql = "select * from Event_data";
+// connection.query(sql, function (err, results) {
+//   if (err) throw err;
+//   console.log(results);
+// });
 
 router.get("/result/:event", (req, res) => {
   //if (error) throw error;
@@ -308,12 +311,20 @@ router.delete("/user-form-delete", function (req, res) {
   );
 });
 
+//method: get
+ //url: http://localhost:3030//user_data/:Username
+
+ //input as url
+
+ //url: http://localhost:3030//user_data/Gdoysaga
+ //url: http://localhost:3030//user_data/sorapure
+
 router.get("/user_data/:Username", function (req, res) {
   let usr_name = req.params.Username;
   if (!usr_name) {
     return res
       .status(400)
-      .send({ error: true, message: "Please provide student id." });
+      .send({ error: true, message: "Please provide username." });
   }
   connection.query(
     "SELECT * FROM info where Username=?",
@@ -325,12 +336,15 @@ router.get("/user_data/:Username", function (req, res) {
   );
 });
 
-// router.get("/user_data", function (req, res) {
-//   connection.query("SELECT * FROM info", function (error, results) {
-//     if (error) throw error;
-//     return res.send({ error: false, data: results, message: "User list." });
-//   });
-// });
+//method: get
+ //url: http://localhost:3030/user_data/
+
+ router.get("/user_data", function (req, res) {
+  connection.query("SELECT * FROM info", function (error, results) {
+    if (error) throw error;
+    return res.send({ error: false, data: results, message: "User list." });
+  });
+});
 
 // Event Part
 
@@ -454,6 +468,41 @@ router.delete("/event-form-delete", function (req, res) {
       });
     }
   );
+});
+
+//method: get
+ //url: http://localhost:3030//event_data/:EventID
+ 
+ //input as url:
+
+ //http://localhost:3030//event_data/AD001
+ //http://localhost:3030//event_data/AD002
+
+ router.get("/event_data/:EventID", function (req, res) {
+  let event_id = req.params.EventID;
+  if (!event_id) {
+    return res
+      .status(400)
+      .send({ error: true, message: "Please provide username." });
+  }
+  connection.query(
+    "SELECT * FROM Event_data where EventID=?",
+    event_id,
+    function (error, results) {
+      if (error) throw error;
+      return res.send({data: results[0]});
+    }
+  );
+});
+
+//method: get
+//url: http://localhost:3030//event_data/
+
+router.get("/event_data", function (req, res) {
+  connection.query("SELECT * FROM Event_data", function (error, results) {
+    if (error) throw error;
+    return res.send({ error: false, data: results, message: "Event list." });
+  });
 });
 
 /* Run Server */
