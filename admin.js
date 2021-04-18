@@ -150,6 +150,11 @@ router.delete("/user-form-delete", function (req, res) {
 
 //method: get
 //url: http://localhost:3030//user_data/:Username
+//input as url
+
+//url: http://localhost:3030//user_data/Gdoysaga
+//url: http://localhost:3030//user_data/sorapure
+
 
 router.get("/user_data/:Username", function (req, res) {
   let usr_name = req.params.Username;
@@ -304,6 +309,10 @@ router.delete("/event-form-delete", function (req, res) {
 
 //method: get
 //url: http://localhost:3030//event_data/:EventID
+//input as url:
+
+//http://localhost:3030//event_data/AD001
+//http://localhost:3030//event_data/AD002
 
 router.get("/event_data/:EventID", function (req, res) {
   let event_id = req.params.EventID;
