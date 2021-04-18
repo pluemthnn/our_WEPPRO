@@ -46,25 +46,50 @@ async function callUserWS(url, method, sentData = {}) {
 
 // -----------------------------------------------------
 
-// let selectallBtnRef = document.querySelector("#selectall");
-// selectallBtnRef.addEventListener("click", () => {
-//     let output = document.getElementById("result");
-//     let text = "";
-//     callUserWS("http://localhost:3030/user_data/", "selectall").then(
-//         (data) => {
-//             if (data) {
-//                 alert(data.message);
-//                 for (const x of data.data) {
-//                     let usr_name = x.Username;
-//                     text += `User Name ${usr_name}`;
-//                 }
-//                 output.innerHTML = text;
-//             }
-//         }
-//     );
-// });
-
 // User Part
+
+let selectallBtnRef = document.querySelector("#selectall");
+selectallBtnRef.addEventListener("click", () => {
+  let output = document.getElementById("result1");
+  let text = "";
+  callUserWS("http://localhost:3030/user_data/", "selectall").then((data) => {
+    if (data) {
+      alert(data.message);
+      for (const x of data.data) {
+        text += `User Name: ${x.Username}<br>`;
+        text += `User Password: ${x.User_pwd}<br>`;
+        text += `Email: ${x.Email}<br>`;
+        text += `Name: ${x.Fname} ${x.Lname}<br>`;
+        text += `Date of Birth: ${x.DOB}<br>`;
+        text += `Phone Number: ${x.Phone}<br>`;
+        text += "<br>";
+      }
+      output.innerHTML = text;
+    }
+  });
+});
+
+let selectBtnRef = document.querySelector("#select");
+selectBtnRef.addEventListener("click", () => {
+  let output = document.getElementById("result1");
+  let text = "";
+  let usr_name = document.getElementById("txtusername").value;
+  callUserWS("http://localhost:3030/user_data/" + usr_name, "select").then(
+    (data) => {
+      if (data) {
+        alert("retrieved user");
+        text += `User Name: ${data.data.Username}<br>`;
+        text += `User Password: ${data.data.User_pwd}<br>`;
+        text += `Email: ${data.data.Email}<br>`;
+        text += `Name: ${data.data.Fname} ${data.data.Lname}<br>`;
+        text += `Date of Birth: ${data.data.DOB}<br>`;
+        text += `Phone Number: ${data.data.Phone}<br>`;
+        text += "<br>";
+        output.innerHTML = text;
+      }
+    }
+  );
+});
 
 let insertBtnRef = document.querySelector("#insert");
 insertBtnRef.addEventListener("click", () => {
@@ -225,4 +250,50 @@ deleteBtnRef2.addEventListener("click", () => {
     console.log(data);
     alert("Delete Successfully");
   });
+});
+
+let selectallBtnRef2 = document.querySelector("#selectall2");
+selectallBtnRef2.addEventListener("click", () => {
+  let output = document.getElementById("result2");
+  let text = "";
+  callUserWS("http://localhost:3030/event_data/", "selectall").then((data) => {
+    if (data) {
+      alert(data.message);
+      for (const x of data.data) {
+        text += `Event ID: ${x.EventID}<br>`;
+        text += `Event Name: ${x.Eventname}<br>`;
+        text += `Date & Time: ${x.DATE_TIME}<br>`;
+        text += `Location: ${x.Location}<br>`;
+        text += `Description: ${x.Event_Description}<br>`;
+        text += `Type: ${x.Eventtype}<br>`;
+        text += `<img src="${x.imgURL}" width="20%"><br>`;
+        text += "<br>";
+      }
+      output.innerHTML = text;
+    }
+  });
+});
+
+let selectBtnRef2 = document.querySelector("#select2");
+selectBtnRef2.addEventListener("click", () => {
+  let output = document.getElementById("result2");
+  let text = "";
+  let event_id = document.getElementById("txteventID").value;
+  callUserWS("http://localhost:3030/event_data/" + event_id, "select").then(
+    (data) => {
+      if (data) {
+        const x = data.data;
+        alert("retrieved event");
+        text += `Event ID: ${x.EventID}<br>`;
+        text += `Event Name: ${x.Eventname}<br>`;
+        text += `Date & Time: ${x.DATE_TIME}<br>`;
+        text += `Location: ${x.Location}<br>`;
+        text += `Description: ${x.Event_Description}<br>`;
+        text += `Type: ${x.Eventtype}<br>`;
+        text += `<img src="${x.imgURL}" width="20%"><br>`;
+        text += "<br>";
+        output.innerHTML = text;
+      }
+    }
+  );
 });
