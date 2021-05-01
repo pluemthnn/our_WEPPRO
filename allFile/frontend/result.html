@@ -212,7 +212,9 @@
 
     var map = new mapboxgl.Map({
       container: 'map',
-      style: locationList[address]
+      style: locationList[address],
+      center: [100.66,13.60],
+      zoom: 10
       
     });
   })

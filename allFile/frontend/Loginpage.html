@@ -190,11 +190,18 @@
               admin.innerHTML = '<a href="/adminpage" class="nav-link">Only Admin</a>';
             } else if (user_role == '1') {
               role = " User"
-            } 
-          }else {
-              role = " Error"
+            }
+          } else {
+            role = " Error"
           }
-          alert(`${role} ${data.message}`);
+          if(role == " Admin"){
+            if (window.confirm(`${role} ${data.message} Redirected to admin page!`)) {
+              window.location.href = 'http://localhost:4000/';
+            };
+          }
+          if(role == " User"){
+            alert(`${role} ${data.message}`);
+          }
 
         })
         .catch((err) => console.log(err));

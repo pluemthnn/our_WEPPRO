@@ -27,7 +27,6 @@ connection.connect(function (err) {
   console.log("Connected DB: " + process.env.MYSQL_DATABASE);
   console.log("Click Link to open Website");
   console.log("http://localhost:3030/homepage");
-
 });
 
 router.post('/auth', async (req, res) => {
@@ -319,21 +318,123 @@ router.delete("/user-form-delete", function (req, res) {
  //url: http://localhost:3030//user_data/Gdoysaga
  //url: http://localhost:3030//user_data/sorapure
 
-router.get("/user_data/:Username", function (req, res) {
-  let usr_name = req.params.Username;
-  if (!usr_name) {
-    return res
-      .status(400)
-      .send({ error: true, message: "Please provide username." });
-  }
-  connection.query(
-    "SELECT * FROM info where Username=?",
-    usr_name,
-    function (error, results) {
-      if (error) throw error;
-      return res.send({ data: results[0] });
+ router.get("/user_datasearch", function (req, res) {
+  const user_usrname = req.query.Username;
+  const user_email = req.query.Email;
+  const user_fname = req.query.Fname;
+  const user_lname = req.query.Lname;
+  const user_dob = req.query.DOB;
+  const user_phone = req.query.Phone;
+  let sql = "";
+  if (user_usrname) {
+    sql = "SELECT * FROM info where Username LIKE '%" + user_usrname + "%'";
+    if (user_email && user_email != "") {
+      sql += "AND Email LIKE '%" + user_email + "%'";
     }
-  );
+    if (user_fname && user_fname != "") {
+      sql += "AND Fname LIKE '%" + user_fname + "%'";
+    }
+    if (user_lname && user_lname != "") {
+      sql += "AND Lname LIKE '%" + user_lname + "%'";
+    }
+    if (user_dob && user_dob != "") {
+      sql += "AND DOB LIKE '%" + user_dob + "%'";
+    }
+    if (user_phone && user_phone != "") {
+      sql += "AND Phone LIKE '%" + user_phone + "%'";
+    }
+  } else if (user_email) {
+    sql = "SELECT * FROM info where Email LIKE '%" + user_email + "%'";
+    if (user_usrname && user_usrname != "") {
+      sql += "AND Username LIKE '%" + user_usrname + "%'";
+    }
+    if (user_fname && user_fname != "") {
+      sql += "AND Fname LIKE '%" + user_fname + "%'";
+    }
+    if (user_lname && user_lname != "") {
+      sql += "AND Lname LIKE '%" + user_lname + "%'";
+    }
+    if (user_dob && user_dob != "") {
+      sql += "AND DOB LIKE '%" + user_dob + "%'";
+    }
+    if (user_phone && user_phone != "") {
+      sql += "AND Phone LIKE '%" + user_phone + "%'";
+    }
+  } else if (user_fname) {
+    sql = "SELECT * FROM info where Fname LIKE '%" + user_fname + "%'";
+    if (user_usrname && user_usrname != "") {
+      sql += "AND Username LIKE '%" + user_usrname + "%'";
+    }
+    if (user_email && user_email != "") {
+      sql += "AND Email LIKE '%" + user_email + "%'";
+    }
+    if (user_lname && user_lname != "") {
+      sql += "AND Lname LIKE '%" + user_lname + "%'";
+    }
+    if (user_dob && user_dob != "") {
+      sql += "AND DOB LIKE '%" + user_dob + "%'";
+    }
+    if (user_phone && user_phone != "") {
+      sql += "AND Phone LIKE '%" + user_phone + "%'";
+    }
+  } else if (user_lname) {
+    sql = "SELECT * FROM info where Lname LIKE '%" + user_lname + "%'";
+    if (user_usrname && user_usrname != "") {
+      sql += "AND Username LIKE '%" + user_usrname + "%'";
+    }
+    if (user_email && user_email != "") {
+      sql += "AND Email LIKE '%" + user_email + "%'";
+    }
+    if (user_fname && user_fname != "") {
+      sql += "AND Fname LIKE '%" + user_fname + "%'";
+    }
+    if (user_dob && user_dob != "") {
+      sql += "AND DOB LIKE '%" + user_dob + "%'";
+    }
+    if (user_phone && user_phone != "") {
+      sql += "AND Phone LIKE '%" + user_phone + "%'";
+    }
+  } else if (user_dob) {
+    sql = "SELECT * FROM info where DOB LIKE '%" + user_dob + "%'";
+    if (user_usrname && user_usrname != "") {
+      sql += "AND Username LIKE '%" + user_usrname + "%'";
+    }
+    if (user_email && user_email != "") {
+      sql += "AND Email LIKE '%" + user_email + "%'";
+    }
+    if (user_fname && user_fname != "") {
+      sql += "AND Fname LIKE '%" + user_fname + "%'";
+    }
+    if (user_lname && user_lname != "") {
+      sql += "AND Lname LIKE '%" + user_lname + "%'";
+    }
+    if (user_phone && user_phone != "") {
+      sql += "AND Phone LIKE '%" + user_phone + "%'";
+    }
+  } else if (user_phone) {
+    sql = "SELECT * FROM info where Phone LIKE '%" + user_phone + "%'";
+    if (user_usrname && user_usrname != "") {
+      sql += "AND Username LIKE '%" + user_usrname + "%'";
+    }
+    if (user_email && user_email != "") {
+      sql += "AND Email LIKE '%" + user_email + "%'";
+    }
+    if (user_fname && user_fname != "") {
+      sql += "AND Fname LIKE '%" + user_fname + "%'";
+    }
+    if (user_lname && user_lname != "") {
+      sql += "AND Lname LIKE '%" + user_lname + "%'";
+    }
+    if (user_dob && user_dob != "") {
+      sql += "AND DOB LIKE '%" + user_dob + "%'";
+    }
+  } else {
+    sql = "SELECT * FROM info";
+  }
+  connection.query(sql, function (error, results) {
+    if (error) throw error;
+    return res.send({ data: results });
+  });
 });
 
 //method: get
@@ -478,21 +579,128 @@ router.delete("/event-form-delete", function (req, res) {
  //http://localhost:3030//event_data/AD001
  //http://localhost:3030//event_data/AD002
 
- router.get("/event_data/:EventID", function (req, res) {
-  let event_id = req.params.EventID;
-  if (!event_id) {
-    return res
-      .status(400)
-      .send({ error: true, message: "Please provide username." });
-  }
-  connection.query(
-    "SELECT * FROM Event_data where EventID=?",
-    event_id,
-    function (error, results) {
-      if (error) throw error;
-      return res.send({data: results[0]});
+ router.get("/event_datasearch", function (req, res) {
+  const event_id = req.query.EventID;
+  const event_name = req.query.EventName;
+  const event_dt = req.query.DateTime;
+  const event_location = req.query.Location;
+  const event_type = req.query.EventType;
+  const event_desc = req.query.EventDesc;
+  let sql = "";
+  if (event_id) {
+    sql = "SELECT * FROM Event_data where EventID LIKE '%" + event_id + "%'";
+    if (event_name && event_name != "") {
+      sql += "AND Eventname LIKE '%" + event_name + "%'";
     }
-  );
+    if (event_dt && event_dt != "") {
+      sql += "AND DATE_TIME LIKE '%" + event_dt + "%'";
+    }
+    if (event_location && event_location != "") {
+      sql += "AND Location LIKE '%" + event_location + "%'";
+    }
+    if (event_type && event_type != "") {
+      sql += "AND Eventtype ='" + event_type + "'";
+    }
+    if (event_desc && event_desc != "") {
+      sql += "AND Event_Description LIKE '%" + event_desc + "%'";
+    }
+  } else if (event_name) {
+    sql =
+      "SELECT * FROM Event_data where Eventname LIKE '%" + event_name + "%'";
+    if (event_id && event_id != "") {
+      sql += "AND EventID LIKE '%" + event_id + "%'";
+    }
+    if (event_dt && event_dt != "") {
+      sql += "AND DATE_TIME LIKE '%" + event_dt + "%'";
+    }
+    if (event_location && event_location != "") {
+      sql += "AND Location LIKE '%" + event_location + "%'";
+    }
+    if (event_type && event_type != "") {
+      sql += "AND Eventtype ='" + event_type + "'";
+    }
+    if (event_desc && event_desc != "") {
+      sql += "AND Event_Description LIKE '%" + event_desc + "%'";
+    }
+  } else if (event_dt) {
+    sql = "SELECT * FROM Event_data where DATE_TIME LIKE '%" + event_dt + "%'";
+    if (event_id && event_id != "") {
+      sql += "AND EventID LIKE '%" + event_id + "%'";
+    }
+    if (event_name && event_name != "") {
+      sql += "AND Eventname LIKE '%" + event_name + "%'";
+    }
+    if (event_location && event_location != "") {
+      sql += "AND Location LIKE '%" + event_location + "%'";
+    }
+    if (event_type && event_type != "") {
+      sql += "AND Eventtype ='" + event_type + "'";
+    }
+    if (event_desc && event_desc != "") {
+      sql += "AND Event_Description LIKE '%" + event_desc + "%'";
+    }
+  } else if (event_location) {
+    sql =
+      "SELECT * FROM Event_data where Location LIKE '%" + event_location + "%'";
+    if (event_id && event_id != "") {
+      sql += "AND EventID LIKE '%" + event_id + "%'";
+    }
+    if (event_name && event_name != "") {
+      sql += "AND Eventname LIKE '%" + event_name + "%'";
+    }
+    if (event_dt && event_dt != "") {
+      sql += "AND DATE_TIME LIKE '%" + event_dt + "%'";
+    }
+    if (event_type && event_type != "") {
+      sql += "AND Eventtype ='" + event_type + "'";
+    }
+    if (event_desc && event_desc != "") {
+      sql += "AND Event_Description LIKE '%" + event_desc + "%'";
+    }
+  } else if (event_type) {
+    sql = "SELECT * FROM Event_data where Eventtype = '" + event_type + "'";
+    if (event_id && event_id != "") {
+      sql += "AND EventID LIKE '%" + event_id + "%'";
+    }
+    if (event_name && event_name != "") {
+      sql += "AND Eventname LIKE '%" + event_name + "%'";
+    }
+    if (event_dt && event_dt != "") {
+      sql += "AND DATE_TIME LIKE '%" + event_dt + "%'";
+    }
+    if (event_location && event_location != "") {
+      sql += "AND Location LIKE '%" + event_location + "%'";
+    }
+    if (event_desc && event_desc != "") {
+      sql += "AND Event_Description LIKE '%" + event_desc + "%'";
+    }
+  } else if (event_desc) {
+    sql =
+      "SELECT * FROM Event_data where Event_Description LIKE '%" +
+      event_desc +
+      "%'";
+    if (event_id && event_id != "") {
+      sql += "AND EventID LIKE '%" + event_id + "%'";
+    }
+    if (event_name && event_name != "") {
+      sql += "AND Eventname LIKE '%" + event_name + "%'";
+    }
+    if (event_dt && event_dt != "") {
+      sql += "AND DATE_TIME LIKE '%" + event_dt + "%'";
+    }
+    if (event_location && event_location != "") {
+      sql += "AND Location LIKE '%" + event_location + "%'";
+    }
+    if (event_type && event_type != "") {
+      sql += "AND Eventtype ='" + event_type + "'";
+    }
+  } else {
+    sql = "SELECT * FROM Event_data";
+  }
+  connection.query(sql, function (error, results) {
+    if (error) throw error;
+    return res.send({ data: results });
+  });
 });
 
 //method: get
