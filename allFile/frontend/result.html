@@ -204,7 +204,7 @@
     document.getElementById('location').innerHTML = `<i class="fas fa-map-marker-alt" style="color: #9e293b"></i>   ${data.result.place} <br/> `;
     document.getElementById('Datetime').innerHTML = `<i class="fas fa-calendar-day" style="color: #9e293b" ></i> ${dayjs(data.result.date).format("DD MMMM YYYY")} &nbsp;&nbsp; <i class="fas fa-clock" style="color: #9e293b" ></i> ${dayjs(data.result.date).format('HH:mm')}`;
     document.getElementById('describe').innerHTML = `${data.result.des} `;
-    document.getElementById('gdoys').innerHTML = `<img id="img" src="${data.result.img}" class="img-fluid"> `;
+    document.getElementById('gdoys').innerHTML = `<img id="img" src="${data.result.img}" class="img-fluid">`;
     // console.log(locationList[address]);
     
     //API MAPBOX
